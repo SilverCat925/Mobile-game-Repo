@@ -11,11 +11,13 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
+
+    public string message = "";
     //--------------------------------------------------
     // Start is called before the first frame update
     void Start()
     {
-        Debug.LogWarning("Cats");
+        Debug.LogWarning(message);
     }
     //--------------------------------------------------
 
