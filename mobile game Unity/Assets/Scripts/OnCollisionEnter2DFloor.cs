@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision2D : MonoBehaviour
+public class OnCollisionEnter2DFloor : MonoBehaviour
 {
     public Texture2D tex;
 

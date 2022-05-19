@@ -4,27 +4,14 @@ using UnityEngine;
 
 public class Hazards : MonoBehaviour
 {
- 
-    // Built-in Unity function for handling collisions
-    // This function will be called when another object bumps 
-    // into the one this script is attached to
-    void OnCollisionEnter2D(Collision2D collisionData)
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
-        // Get the object we collided with
-        Collider2D objectWeCollidedWith = collisionData.GetComponent<Collider>();
+        PlayerHealth healthScript = collision.gameObject.GetComponent<PlayerHealth>();
+        healthScript.Kill();
 
-        // Get the PlayerHealth script attached to that object (if there is one)
-        PlayerHealth player = objectWeCollidedWith.GetComponent<PlayerHealth>();
-
-        // Check if we actually found a player health script
-        // This if statement is true if the player variable is NOT null (empty)
-        if (player != null)
-        {
-            // This means there WAS a PlayerHealth script attached to the object we bumped into
-            // Which means this object is indeed the player
-
-            // Perform our on-collision action (kill the player)
-            player.Kill();
+        if (healthScript != null)
+        { 
+            healthScript.Kill();
         }
     }
 }
