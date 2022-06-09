@@ -299,3 +299,4 @@ Received Import Request.
   path: Assets/Scripts/EnemyPatrol.cs
   artifactKey: Guid(9f9e96f81f0f6404cba79b3d214308b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/EnemyPatrol.cs using Guid(9f9e96f81f0f6404cba79b3d214308b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '954c415ebe48596a77b9176137b5fae0') in 0.003552 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
