@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hazards : MonoBehaviour
 {
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    // Start is called before the first frame update
+    public string gameOverScene;
+    void OnCollisionEnter2D(Collision2D collisionData)
     {
-        PlayerHealth healthScript = collision.gameObject.GetComponent<PlayerHealth>();
-        healthScript.Kill();
+        
+        Collider2D objectWeCollidedWith = collisionData.collider;
 
-        if (healthScript != null)
-        { 
-            healthScript.Kill();
+        PlayerHealth player = objectWeCollidedWith.GetComponent<PlayerHealth>();
+
+        if (player != null)
+        {
+            player.Kill();
+            SceneManager.LoadScene(gameOverScene);
         }
     }
+
 }

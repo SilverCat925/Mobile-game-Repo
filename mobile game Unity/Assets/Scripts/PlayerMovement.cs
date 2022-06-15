@@ -25,8 +25,33 @@ public class PlayerMovement : MonoBehaviour
         
         float axisValx = Input.GetAxis("Horizontal");
         float axisValy = Input.GetAxis("Vertical");
-        physicsBody.velocity = new Vector2(axisValx * Speed, axisValy *Speed);
+
+        //physicsBody.velocity = new Vector2(axisValx * Speed, axisValy *Speed);
 
         
+    }
+
+    public void MoveLeft()
+    {
+        physicsBody.velocity = new Vector2(-Speed, 0);
+
+    }
+
+    public void MoveRight()
+    {
+        physicsBody.velocity = new Vector2(Speed, 0);
+
+    }
+
+    public void MoveUp()
+    {
+        physicsBody.velocity = new Vector2(0, Speed);
+
+    }
+
+    public void MoveDown()
+    {
+        physicsBody.velocity = new Vector2(0, -Speed);
+
     }
 }

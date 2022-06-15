@@ -32,5 +32,6 @@ public class PlayerDamage : MonoBehaviour
 
         // Destroy the enemy
         Destroy(enemy);
+
     }
 }
