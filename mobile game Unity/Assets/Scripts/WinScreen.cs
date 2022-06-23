@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Hazards : MonoBehaviour
+public class WinScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public string gameOverScene;
+    public string gameWinScene;
     void OnCollisionEnter2D(Collision2D collisionData)
     {
-        
+
         Collider2D objectWeCollidedWith = collisionData.collider;
 
         PlayerHealth player = objectWeCollidedWith.GetComponent<PlayerHealth>();
 
         if (player != null)
         {
-            
-            SceneManager.LoadScene(gameOverScene);
+            SceneManager.LoadScene(gameWinScene);
         }
     }
-
 }
